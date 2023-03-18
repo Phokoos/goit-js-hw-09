@@ -21,6 +21,9 @@ allBtn.forEach((element) => {
 	element.style.fontSize = "30px";
 })
 
+// Disabled stop btn
+stopBtn.setAttribute("disabled", "");
+
 // 3 Add listenr to btns
 startBtn.addEventListener("click", startIntervalColorChanging);
 stopBtn.addEventListener("click", stopIntervalColorChanging);
@@ -30,17 +33,21 @@ stopBtn.addEventListener("click", stopIntervalColorChanging);
 function startIntervalColorChanging() {
 	// 5 disabled start-btn
 	startBtn.setAttribute("disabled", "");
+	// Enabled stop-btn
+	stopBtn.removeAttribute("disabled");
 	// 8 Set up interval
 	changeColorInterval = setInterval(() => {
 		const backgroundColorVar = getRandomHexColor();
 		elBody.style.backgroundColor = backgroundColorVar;
-	}, 800);
+	}, 1000);
 }
 
 // 6 Fun for stop
 function stopIntervalColorChanging() {
 	// 7 Enabled start-btn
 	startBtn.removeAttribute("disabled");
+	// Disabled stop btn
+	stopBtn.setAttribute("disabled", "");
 	// 9 Clear interval
 	clearInterval(changeColorInterval);
 }
