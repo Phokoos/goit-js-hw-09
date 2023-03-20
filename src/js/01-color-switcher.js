@@ -1,3 +1,5 @@
+// Var for interval
+let changeColorInterval;
 
 // 1 Receive elements
 const startBtn = document.querySelector("[data-start]");

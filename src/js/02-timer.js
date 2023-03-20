@@ -92,7 +92,7 @@ startBtn.addEventListener("click", () => {
 	startBtn.setAttribute("disabled", " ");
 	elInputField.setAttribute("disabled", " ");
 	// Set up interval
-	intervalForValueDate = setInterval(() => {
+	const intervalForValueDate = setInterval(() => {
 		// Remove interval
 		if (currentDateGlobal >= selectedDatesGlobal) {
 			elInputField.removeAttribute("disabled");
