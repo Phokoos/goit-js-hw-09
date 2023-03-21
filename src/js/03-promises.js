@@ -39,6 +39,10 @@ elForm.addEventListener("submit", (event) => {
 	const stepNumber = parseInt(elInputStep.value);
 	var promiseNumber = 0;
 
+	if (stepNumber < 0 || delayInterval < 0 || elInputAmount.value < 0) {
+		return Notiflix.Notify.failure(`You written value which less than zero!`);
+	}
+
 	for (let index = elInputAmount.value; index > 0; index -= 1) {
 		promiseNumber += 1;
 
